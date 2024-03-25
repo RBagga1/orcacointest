@@ -36,7 +36,7 @@ import (
 )
 
 const (
-	defaultConfigFilename        = "btcd.conf"
+	defaultConfigFilename        = "sample-btcd.conf"
 	defaultDataDirname           = "data"
 	defaultLogLevel              = "info"
 	defaultLogDirname            = "logs"
@@ -556,7 +556,7 @@ func loadConfig() (*config, []string, error) {
 	if cfg.FreshNet {
 		numNets++
 		activeNetParams = &freshNetParams
-	} 
+	}
 	if cfg.RegressionTest {
 		numNets++
 		activeNetParams = &regressionNetParams
