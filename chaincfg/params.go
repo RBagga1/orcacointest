@@ -453,14 +453,15 @@ var FreshNetParams = Params{
 	// defines the number of confirmations required before newly mined coins can be spent.
 	// Lowering this value reduces the waiting time for miners to spend their rewards, which can incentivize mining
 	// CoinbaseMaturity:         100,
-	CoinbaseMaturity:         50,
-	SubsidyReductionInterval: 210000,
+	CoinbaseMaturity: 1,
+	// SubsidyReductionInterval: 210000,
+	SubsidyReductionInterval: 20,
 	// widens the window for difficulty adjustments.
-	// TargetTimespan: time.Hour * 24 * 14, // 14 days
-	TargetTimespan: time.Hour * 24 * 28, // 28 days
+	TargetTimespan: time.Hour * 24 * 14, // 14 days
+	// TargetTimespan: time.Hour * 24 * 28, // 28 days
 	// to slow down the block production rate
-	// TargetTimePerBlock:       time.Minute * 10, // 10 minutes
-	TargetTimePerBlock: time.Minute * 20, // 20 minutes
+	TargetTimePerBlock:       time.Minute * 10, // 10 minutes
+	// TargetTimePerBlock: time.Minute * 20, // 20 minutes
 	// controls how much the difficulty can adjust in each retargeting period.
 	// Lowering this value allows for more significant adjustments,
 	// which can help the network quickly adapt to changes in mining power or difficulty
