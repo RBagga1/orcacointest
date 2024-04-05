@@ -36,7 +36,7 @@ import (
 )
 
 const (
-	defaultConfigFilename        = "sample-btcd.conf"
+	defaultConfigFilename        = "btcd.conf"
 	defaultDataDirname           = "data"
 	defaultLogLevel              = "info"
 	defaultLogDirname            = "logs"
