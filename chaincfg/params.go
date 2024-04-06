@@ -439,7 +439,7 @@ var FreshNetParams = Params{
 	DefaultPort: "41600",
 	// TODO: seed nodes left blank for now
 	DNSSeeds: []DNSSeed{
-		{"seed.orcacoin.com", true},
+		{"ns1.orca.com", true},
 	},
 
 	// Chain parameters
