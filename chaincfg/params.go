@@ -439,7 +439,7 @@ var FreshNetParams = Params{
 	DefaultPort: "41600",
 	// TODO: seed nodes left blank for now
 	DNSSeeds: []DNSSeed{
-		{"seed.orcacoin.com", true},
+		{"ns1.orca.com", true},
 	},
 
 	// Chain parameters
@@ -462,7 +462,7 @@ var FreshNetParams = Params{
 	TargetTimespan: time.Hour * 24 * 14, // 14 days
 	// TargetTimespan: time.Hour * 24 * 28, // 28 days
 	// to slow down the block production rate
-	TargetTimePerBlock:       time.Minute * 10, // 10 minutes
+	TargetTimePerBlock: time.Minute * 10, // 10 minutes
 	// TargetTimePerBlock: time.Minute * 20, // 20 minutes
 	// controls how much the difficulty can adjust in each retargeting period.
 	// Lowering this value allows for more significant adjustments,
