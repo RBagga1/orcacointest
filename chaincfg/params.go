@@ -29,7 +29,7 @@ var (
 
 	// freshNetPowLimit is the highest proof of work value a Bitcoin block
 	// can have for the fresh network.  It is the value 2^224 - 1.
-	freshNetPowLimit = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 224), bigOne)
+	freshNetPowLimit = regressionPowLimit
 
 	// regressionPowLimit is the highest proof of work value a Bitcoin block
 	// can have for the regression test network.  It is the value 2^255 - 1.
@@ -438,7 +438,9 @@ var FreshNetParams = Params{
 	// looking at the port number
 	DefaultPort: "41600",
 	// TODO: seed nodes left blank for now
-	DNSSeeds: []DNSSeed{},
+	DNSSeeds: []DNSSeed{
+		{"seed.orcacoin.com", true},
+	},
 
 	// Chain parameters
 	GenesisBlock: &freshNetGenesisBlock,
@@ -446,7 +448,7 @@ var FreshNetParams = Params{
 	PowLimit:     freshNetPowLimit,
 	// determines how difficult to mine
 	// PowLimitBits:             0x1d00ffff,
-	PowLimitBits:  0x1e0fffff,
+	PowLimitBits:  0x207fffff,
 	BIP0034Height: 227931, // 000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8
 	BIP0065Height: 388381, // 000000000000000004c2b624ed5d7756c508d90fd0da2c7c679febfa6c4735f0
 	BIP0066Height: 363725, // 00000000000000000379eaa19dce8c9b722d46ae6a57c2f1a988119488b50931
