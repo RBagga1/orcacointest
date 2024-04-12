@@ -111,14 +111,6 @@ func btcdMain(serverChan chan<- *server) error {
 		return nil
 	}
 
-	// Generate a new freshnet address, no longer needed due to wallet
-	// addr, err := btcutil.NewAddressPubKeyHash(
-	// 	make([]byte, 20), &chaincfg.FreshNetParams)
-	// if err != nil {
-	// 	return nil
-	// }
-	// fmt.Println("Freshnet Address:", addr.EncodeAddress())
-
 	// Load the block database.
 	db, err := loadBlockDB()
 	if err != nil {
