@@ -104,3 +104,13 @@ func appDataDir(goos, appName string, roaming bool) string {
 func AppDataDir(appName string, roaming bool) string {
 	return appDataDir(runtime.GOOS, appName, roaming)
 }
+
+// returns the path to the directory in which this function was called
+func CurrentDir() string {
+	currentWorkingDir, err := os.Getwd()
+	if err != nil {
+		return "/"
+	}
+
+	return currentWorkingDir
+}
