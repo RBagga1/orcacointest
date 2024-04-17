@@ -105,12 +105,11 @@ func AppDataDir(appName string, roaming bool) string {
 	return appDataDir(runtime.GOOS, appName, roaming)
 }
 
-// returns the path to the directory in which this function was called
-func CurrentDir() string {
-	currentWorkingDir, err := os.Getwd()
-	if err != nil {
-		return "/"
-	}
+// returns the path to the directory in which btcd is located
+// requirement: GOPATH needs to be initialized as a path variable
+// CHANGE: might have to change depending on where it is located
+func BtcdDir() string {
+	goPath := os.Getenv("GOPATH")
 
-	return currentWorkingDir
+	return filepath.Join(goPath, "src/orcacointest")
 }

@@ -72,7 +72,7 @@ const (
 
 var (
 	defaultHomeDir     = btcutil.AppDataDir("btcd", false)
-	defaultConfigFile  = filepath.Join(btcutil.CurrentDir(), sampleConfigFilename)
+	defaultConfigFile  = filepath.Join(btcutil.BtcdDir(), sampleConfigFilename)
 	defaultDataDir     = filepath.Join(defaultHomeDir, defaultDataDirname)
 	knownDbTypes       = database.SupportedDrivers()
 	defaultRPCKeyFile  = filepath.Join(defaultHomeDir, "rpc.key")
