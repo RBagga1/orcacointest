@@ -437,10 +437,8 @@ var FreshNetParams = Params{
 	// need to define a port num so that peers can communicate in different networks by
 	// looking at the port number
 	DefaultPort: "41600",
-	// TODO: seed nodes left blank for now
-	DNSSeeds: []DNSSeed{
-		{"ns1.orca.com", true},
-	},
+	// Leaving Seed nodes blank for now
+	DNSSeeds: []DNSSeed{},
 
 	// Chain parameters
 	GenesisBlock: &freshNetGenesisBlock,
@@ -459,6 +457,7 @@ var FreshNetParams = Params{
 	TargetTimespan: time.Hour * 24 * 14, // 14 days
 	// to slow down the block production rate
 	TargetTimePerBlock: time.Minute * 10, // 10 minutes
+  
 	// controls how much the difficulty can adjust in each retargeting period.
 	// Lowering this value allows for more significant adjustments,
 	// which can help the network quickly adapt to changes in mining power or difficulty

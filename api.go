@@ -18,7 +18,7 @@ func btcctlCommand(args []string) {
         arg := args[argIdx]
         switch arg {
         case "getbalance":
-            cmd := exec.Command("btcctl", "--configfile=" + btcctlConfPath, "getbalance")
+            cmd := exec.Command("btcctl", "--configfile=" + btcctlConfPath, "getbalance","--notls")
             output, err := cmd.Output()
             if err != nil {
                 fmt.Println("Error when running 'getbalance':", err)
@@ -33,7 +33,7 @@ func btcctlCommand(args []string) {
             }
 
             cmd := exec.Command("btcctl", "--configfile=" + btcctlConfPath, "sendtoaddress",
-                args[argIdx + 1], args[argIdx + 2])
+                args[argIdx + 1], args[argIdx + 2],"--notls")
             output, err := cmd.Output()
             if err != nil {
                 fmt.Println("Error running 'sendtoaddress'", err)
@@ -48,7 +48,7 @@ func btcctlCommand(args []string) {
                 return
             }
 
-            cmd := exec.Command("btcctl", "--configfile=" + btcctlConfPath, "generate", args[argIdx + 1])
+            cmd := exec.Command("btcctl", "--configfile=" + btcctlConfPath, "generate", args[argIdx + 1],"--notls")
             output, err := cmd.Output()
             if err != nil {
                 fmt.Println("Error running 'generate'", err)
@@ -64,7 +64,7 @@ func btcctlCommand(args []string) {
             }
 
             cmd := exec.Command("btcctl", "--configfile=" + btcctlConfPath, "walletpassphrase",
-                args[argIdx + 1], args[argIdx + 2])
+                args[argIdx + 1], args[argIdx + 2],"--notls")
             output, err := cmd.Output()
             if err != nil {
                 fmt.Println("Error running 'walletpassphrase'", err)
